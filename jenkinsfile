@@ -120,7 +120,7 @@ pipeline{
                         sleep 15
                         kubectl get all
                         
-                        ## Describe Service, Copy the LoadBalancer Ingress and Paste the Ingress link in browser and you will see the Mario game ##
+                        ## Describe Service, Copy the LoadBalancer Ingress and hit the Ingress link in browser. The Mario game loads, play & enjoy ##
                         kubectl describe service mario-service
 
                         '''
