@@ -135,8 +135,8 @@ pipeline{
              }
         }
 
-       ## Below Stage is for Clean up of Infrastructure Resources and Kubernetes resources. By default, keep this stage Commented ##
-       ## When Required to clean up resources, uncomment this stage script and then execute under pipeline ##
+   /*  ## Below Stage is for Clean up of Infrastructure Resources and Kubernetes resources. By default, keep this stage Commented ##
+       ## When Required to clean up resources, uncomment this stage script and then execute under pipeline ##  */
 
   /*   stage('Deprovision & Remove Resources') {
             steps {
