@@ -100,5 +100,31 @@ pipeline{
                    }
              }
         }
+
+      stage('Configure kubectl for EKS and Deploy'){
+             steps{
+                 dir('git-custom-dir') {
+                    script{
+                       sh '''
+                       
+                        ## Configure kubectl to use the newly created EKS cluster ##
+                        aws eks update-kubeconfig --name EKS_CLOUD --region us-east-1
+                        
+                        ## App Deployment on EKS ##
+                        kubectl apply -f deployment.yaml
+                        sleep 45
+                        
+                        ## Expose App with Service and set-up Load Balancer ##
+                        kubectl apply -f service.yaml
+                        sleep 15
+                        kubectl get all
+                        
+                        ## Describe Service, Copy the LoadBalancer Ingress and Paste the Ingress link in browser and you will see the Mario game ##
+                        kubectl describe service mario-service
+                        '''
+                    }
+                 }
+             }
+        }
     }
 }
