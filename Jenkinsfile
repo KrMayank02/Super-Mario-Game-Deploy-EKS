@@ -154,6 +154,8 @@ pipeline{
                         echo "Destroying Terraform-managed resources..."
 						
                         cd EKS-TF
+						terraform init
+                        terraform plan -destroy
                         terraform destroy --auto-approve
 						
                         '''
