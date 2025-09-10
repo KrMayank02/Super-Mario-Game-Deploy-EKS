@@ -31,6 +31,10 @@ data "aws_subnets" "public" {
     name   = "vpc-id"
     values = [data.aws_vpc.default.id]
   }
+   filter {
+    name   = "availabilityZone"
+    values = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1f"]  # Supported AZs
+  }
 }
 #cluster provision
 resource "aws_eks_cluster" "example" {
@@ -45,6 +49,7 @@ resource "aws_eks_cluster" "example" {
   # Otherwise, EKS will not be able to properly delete EKS managed EC2 infrastructure such as Security Groups.
   depends_on = [
     aws_iam_role_policy_attachment.example-AmazonEKSClusterPolicy,
+    aws_iam_role_policy_attachment.example-AmazonEKSServicePolicy,
   ]
 }
 
@@ -99,4 +104,9 @@ resource "aws_eks_node_group" "example" {
     aws_iam_role_policy_attachment.example-AmazonEKS_CNI_Policy,
     aws_iam_role_policy_attachment.example-AmazonEC2ContainerRegistryReadOnly,
   ]
+}
+
+
+output "eks_cluster_name" {
+  value = aws_eks_cluster.example.name
 }
