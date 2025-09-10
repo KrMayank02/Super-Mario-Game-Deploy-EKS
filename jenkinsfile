@@ -97,6 +97,7 @@ pipeline{
              steps{
                  dir('git-custom-dir/EKS-TF') {
                       sh 'terraform ${Action} --auto-approve'
+                      sh 'sleep 20'
                    }
              }
         }
@@ -112,7 +113,7 @@ pipeline{
                         
                         ## App Deployment on EKS ##
                         kubectl apply -f deployment.yaml
-                        sleep 45
+                        sleep 40
                         
                         ## Expose App with Service and set-up Load Balancer ##
                         kubectl apply -f service.yaml
@@ -121,6 +122,7 @@ pipeline{
                         
                         ## Describe Service, Copy the LoadBalancer Ingress and Paste the Ingress link in browser and you will see the Mario game ##
                         kubectl describe service mario-service
+
                         '''
                     }
                  }
