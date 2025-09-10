@@ -39,7 +39,8 @@ pipeline{
                        sudo apt-get install wget -y
                        wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
                        echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
-                       sudo apt-get update && sudo apt-get install terraform -y
+                       sudo apt-get update -y 
+                       sudo apt-get install terraform -y
                        sleep 15
                        
                        
@@ -93,24 +94,29 @@ pipeline{
              }
         }
 		
-        stage('Terraform Apply or Destroy'){
+        stage('Terraform Apply'){
              steps{
                  dir('git-custom-dir/EKS-TF') {
-                      sh 'terraform ${Action} --auto-approve'
-                      sh 'sleep 20'
-                   }
+                     script{
+                        sh '''
+                        terraform apply --auto-approve
+                        sleep 20
+
+                        ## Configure kubeconfig to use the newly created EKS cluster ##
+                        aws eks update-kubeconfig --name EKS_CLOUD --region us-east-1
+
+                       '''
+                    }
+                 }
              }
         }
 
-      stage('Configure kubectl for EKS and Deploy'){
+      stage('Deployment and Service on EKS'){
              steps{
                  dir('git-custom-dir') {
                     script{
                        sh '''
-                       
-                        ## Configure kubectl to use the newly created EKS cluster ##
-                        aws eks update-kubeconfig --name EKS_CLOUD --region us-east-1
-                        
+                                                                
                         ## App Deployment on EKS ##
                         kubectl apply -f deployment.yaml
                         sleep 40
@@ -128,5 +134,31 @@ pipeline{
                  }
              }
         }
+
+       ## Stage to Clean up Infrastructure Resources and Kubernetes resources. By default, keep this stage commented ##
+       ## When Required to clean up resources, uncomment this stage script and execute under pipeline ##
+  /*   stage('Deprovision & Remove Resources') {
+            steps {
+			    dir('git-custom-dir') {
+					script {
+                        sh '''
+						
+                        ## Clean up Kubernetes Resources ##
+                        echo "Deleting Kubernetes Service and Deployment..."
+						
+                        kubectl delete service mario-service || true
+                        kubectl delete deployment mario-deployment || true
+                        
+                        ## Deprovision & Remove all infrastructure resources managed by Terraform ##
+                        echo "Destroying Terraform-managed resources..."
+						
+                        cd EKS-TF
+                        terraform destroy --auto-approve
+						
+                        '''
+                    }
+                }
+            }
+        }      */
     }
 }
