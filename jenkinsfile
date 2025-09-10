@@ -1,7 +1,8 @@
 pipeline{
     agent any
+
     stages {
-	    stage('Install Terraform, Docker, AWS CLI, Kubectl'){
+	    stage('Install Terraform-Docker-AWSCLI-Kubectl'){
              steps{
                  script{
                        sh '''
