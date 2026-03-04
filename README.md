@@ -1,4 +1,4 @@
-# Super Mario Game Deployment leveraging modern DevOps Tools and Cloud Technology
+# Capstone Project: Super Mario Game Deployment leveraging modern DevOps Tools and Cloud Technology
 
 **Objective:** Super Mario game deployment faces challenges in setting up a scalable and efficient infrastructure to host the game application. The project requires transforming manual deployment processes into automated workflows, leveraging modern DevOps tools and cloud technologies. This transformation is critical for ensuring high availability, seamless updates, and robust performance of the application.
 The project aims to:
