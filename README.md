@@ -89,10 +89,78 @@ The detailed content of the complete Pipeline Script can be found in Jenkinsfile
 
 --------------------------------------------------------------------------------------------
 
+Create a Jenkins Job (pipeline), Pull the Jenkinsfile and Build the Job
 
+<img width="884" height="417" alt="image" src="https://github.com/user-attachments/assets/b84bdf1f-5df0-4a77-bbea-9280c1ec704c" />
 
+-----------------------------------------------------------------------------------------------
 
+<img width="862" height="470" alt="image" src="https://github.com/user-attachments/assets/f876451f-ff8d-4ae0-8ee8-2a55a24ff7ba" />
 
+---------------------------------------------------------------------------------------------------
 
+<img width="963" height="379" alt="image" src="https://github.com/user-attachments/assets/a19dc751-8b74-432f-abae-1aee139f86c7" />
+
+----------------------------------------------------------------------------------------------------
+
+Observe the Console Output logs till the Job build gets completed
+
+<img width="961" height="449" alt="image" src="https://github.com/user-attachments/assets/650de3eb-4c62-4298-add9-90c79ab375f7" />
+
+----------------------------------------------------------------------------------------------------
+
+<img width="959" height="412" alt="image" src="https://github.com/user-attachments/assets/e5e163e1-4c24-4f28-a97a-ea8e99a25341" />
+
+-----------------------------------------------------------------------------------------------------
+
+<img width="959" height="589" alt="image" src="https://github.com/user-attachments/assets/77e24349-7d3f-4395-af81-30e4c5628be7" />
+
+-------------------------------------------------------------------------------------------------------
+
+<img width="965" height="654" alt="image" src="https://github.com/user-attachments/assets/30369391-b03b-4ebf-8518-e16feb079eaf" />
+
+-----------------------------------------------------------------------------------------------------------
+
+<img width="922" height="573" alt="image" src="https://github.com/user-attachments/assets/3cd9366b-8b5a-44e9-95ca-7b9d86b6f1f1" />
+
+------------------------------------------------------------------------------------------------------------
+
+The Jenkins – Job Pipeline execution gets completed successfully. The Console Output logs displays the success message at the end of pipeline.
+
+<img width="947" height="529" alt="image" src="https://github.com/user-attachments/assets/19a2e859-6bf9-4b32-8ab4-7ea66ea9771b" />
+
+---------------------------------------------------------------------------------------------------------------
+
+<img width="968" height="327" alt="image" src="https://github.com/user-attachments/assets/68706ac2-8b3b-440e-875c-6b41e1db9dcd" />
+
+----------------------------------------------------------------------------------------------------------------
+
+Post Job run,  get Load Balancer URL and access the Application on browser.
+
+<img width="959" height="363" alt="image" src="https://github.com/user-attachments/assets/13b4cb68-958d-4cec-aa2c-9cf4934a2abe" />
+
+---------------------------------------------------------------------------------------------------
+
+<img width="964" height="528" alt="image" src="https://github.com/user-attachments/assets/2f00c480-b543-495e-b5c8-d25053a5d835" />
+
+---------------------------------------------------------------------------------------------------
+
+Enter this DNS name/URL in the browser to access the Super Mario game application:
+
+https://a891286bfe9824d9b82670e9c3f5764d-1159299015.us-east-1.elb.amazonaws.com/
+
+<img width="966" height="526" alt="image" src="https://github.com/user-attachments/assets/d2b21b5a-7941-4d92-95ff-d1d2b67ef54f" />
+
+-----------------------------------------------------------------------------------------------------
+
+Tried playing the game for some time and No issues were found. 
+
+<img width="966" height="489" alt="image" src="https://github.com/user-attachments/assets/52d63f67-243e-444c-9448-8d8311d6ad4b" />
+
+-------------------------------------------------------------------------------------------------------
+
+**By using a Jenkins pipeline, the above Project set-up a secure, reliable and scalable AWS infrastructure using Terraform. Automated the deployment and configuration of Super Mario game application on Amazon EKS cluster with load balancer integration.**
+
+**This end-to-end Jenkins Pipeline not only makes deployments faster but also ensures that every step in the Provisioning of Infrastructure and Deployment process is repeatable, transparent, customizable and error-free.**
 
 
