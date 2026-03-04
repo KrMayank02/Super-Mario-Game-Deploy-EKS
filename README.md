@@ -42,12 +42,25 @@ To address these challenges, PixelPlay Studios adopts DevOps practices to deploy
 -	Create a Pipeline script with multiple stages:
 	- To Install various tools (Docker, AWS CLI, Kubectl, Terraform).
 	- Checkout from Github repo: Terraform files, Resource definition files.
-  -	Run Terraform main workflow commands.
+  	- Run Terraform main workflow commands.
 	- Deploy Mario app on AWS EKS using k8s deployment & service.
-  -	Deprovision and Clean up Infrastructure & K8s Resources.
+ 	- Deprovision and Clean up Infrastructure & K8s Resources.
 -	Create a Jenkins Job (pipeline), Pull the Jenkinsfile and Build the Job.
 -	Observe the Console Output logs till the Job build gets completed.
 -	Post Job run,  get Load Balancer URL and access the Application on browser.
+
+
+## Output Results Screenshots:
+
+Create Amazon S3 bucket and update it in Terraform backend file
+
+<img width="907" height="492" alt="image" src="https://github.com/user-attachments/assets/5c135392-925e-4959-8322-51523e7b4b43" />
+
+------------------------------------------------------------------
+
+<img width="839" height="478" alt="image" src="https://github.com/user-attachments/assets/96fafc7b-1303-4ae7-bfb6-af7822177087" />
+
+
 
 
 
