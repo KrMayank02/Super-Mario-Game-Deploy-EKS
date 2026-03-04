@@ -49,6 +49,7 @@ To address these challenges, PixelPlay Studios adopts DevOps practices to deploy
 -	Observe the Console Output logs till the Job build gets completed.
 -	Post Job run,  get Load Balancer URL and access the Application on browser.
 
+-------------------------------------------------------------------------------------------------
 
 ## Output Results Screenshots:
 
@@ -59,6 +60,37 @@ Create Amazon S3 bucket and update it in Terraform backend file
 ------------------------------------------------------------------
 
 <img width="839" height="478" alt="image" src="https://github.com/user-attachments/assets/96fafc7b-1303-4ae7-bfb6-af7822177087" />
+
+-------------------------------------------------------------------------------------------
+
+Install and Setup Jenkins server on AWS EC2 Instance
+
+<img width="962" height="380" alt="image" src="https://github.com/user-attachments/assets/b71ab632-85a9-4be9-b83a-343dd73af824" />
+
+------------------------------------------------------------------------------------------------
+
+<img width="975" height="507" alt="image" src="https://github.com/user-attachments/assets/df724905-a205-43df-ae72-aa236ad73ba9" />
+
+------------------------------------------------------------------------------------------------
+
+<img width="902" height="388" alt="image" src="https://github.com/user-attachments/assets/2449cf87-515a-45b0-8c0c-d7c37fa3fcc8" />
+
+---------------------------------------------------------------------------------------------
+
+<img width="936" height="454" alt="image" src="https://github.com/user-attachments/assets/03b9f877-47ea-42a2-965c-c62f6e1e3e61" />
+
+----------------------------------------------------------------------------------
+
+Configure Jenkins and Create a Pipeline script with multiple stages
+
+The detailed content of the complete Pipeline Script can be found in Jenkinsfile kept under Github repository:
+
+<img width="1743" height="1016" alt="image" src="https://github.com/user-attachments/assets/2ccc1624-3421-44ef-91a6-aa4eec268800" />
+
+--------------------------------------------------------------------------------------------
+
+
+
 
 
 
